@@ -160,8 +160,8 @@ def update_drink(payload, drink_id):
         return jsonify({
             'success': True,
             'drinks': [{
-                'title': updated_title,
-                'recipe': updated_recipe
+                'title': drink.title,
+                'recipe': drink.recipe
             }]
         }), 200
     except Exception:
@@ -226,7 +226,7 @@ def unprocessable(error):
     return jsonify({
         "success": False,
         "error": 422,
-        "message": "unprocessable"
+        "message": "Unprocessable"
     }), 422
 
 
@@ -235,7 +235,7 @@ def not_found(error):
     return jsonify({
         "success": False,
         "error": 404,
-        "message": "Not found"
+        "message": "Not Found"
     }), 404
 
 
@@ -244,7 +244,7 @@ def already_exist(error):
     return jsonify({
         "success": False,
         "error": 409,
-        "message": "Already exists"
+        "message": "Already Exists"
     })
 
 '''
